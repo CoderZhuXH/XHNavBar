@@ -25,7 +25,7 @@
     
     //1.初始化navigationBar + 设置标题
     [self cus_initNavBarAndSetTitle:@"首页"];
-    //1.初始化navigationBar + 设置标题 + 自定义返回事件
+    //1.初始化navigationBar + 设置标题 + 自定义返回事件(两方法二选一)
     //[self cus_initNavBarAndSetTitle:@"首页" backAction:@selector(backAction)];
     
     //2.设置rightBarButtonItem
