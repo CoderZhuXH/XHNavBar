@@ -3,7 +3,7 @@
 //  XHNavBarExample
 //
 //  Created by zhuxiaohui on 16/10/19.
-//  Copyright © 2016年 qiantou. All rights reserved.
+//  Copyright © 2016年 CoderZhuXH. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
