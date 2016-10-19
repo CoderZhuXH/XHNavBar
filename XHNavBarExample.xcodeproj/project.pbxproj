@@ -7,20 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CAE8A381DB7416C0091D289 /* CusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CAE8A361DB7416C0091D289 /* CusViewController.m */; };
+		0CAE8A391DB7416C0091D289 /* CusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CAE8A371DB7416C0091D289 /* CusViewController.xib */; };
+		0CAE8A3D1DB741720091D289 /* SysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CAE8A3B1DB741720091D289 /* SysViewController.m */; };
+		0CAE8A3E1DB741720091D289 /* SysViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CAE8A3C1DB741720091D289 /* SysViewController.xib */; };
+		0CAE8A441DB741C90091D289 /* CusSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CAE8A421DB741C90091D289 /* CusSubViewController.m */; };
+		0CAE8A451DB741C90091D289 /* CusSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CAE8A431DB741C90091D289 /* CusSubViewController.xib */; };
+		0CAE8A491DB741D90091D289 /* SysSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CAE8A471DB741D90091D289 /* SysSubViewController.m */; };
+		0CAE8A4A1DB741D90091D289 /* SysSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CAE8A481DB741D90091D289 /* SysSubViewController.xib */; };
 		4B6A25651CF6F9F600478EAB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A25641CF6F9F600478EAB /* main.m */; };
 		4B6A25681CF6F9F600478EAB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A25671CF6F9F600478EAB /* AppDelegate.m */; };
 		4B6A256A1CF6F9F600478EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B6A25691CF6F9F600478EAB /* Assets.xcassets */; };
 		4B6A256D1CF6F9F600478EAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6A256B1CF6F9F600478EAB /* LaunchScreen.storyboard */; };
-		4B6A25841CF6FA1100478EAB /* CusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A25761CF6FA1100478EAB /* CusViewController.m */; };
-		4B6A25851CF6FA1100478EAB /* CusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B6A25771CF6FA1100478EAB /* CusViewController.xib */; };
-		4B6A25861CF6FA1100478EAB /* SysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A25791CF6FA1100478EAB /* SysViewController.m */; };
-		4B6A25871CF6FA1100478EAB /* SysViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B6A257A1CF6FA1100478EAB /* SysViewController.xib */; };
 		4B6A258A1CF6FA1100478EAB /* xh_navbar_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B6A25801CF6FA1100478EAB /* xh_navbar_back@2x.png */; };
 		4B6A258B1CF6FA1100478EAB /* xh_navbar_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B6A25811CF6FA1100478EAB /* xh_navbar_back@3x.png */; };
 		4B6A258C1CF6FA1100478EAB /* UIViewController+XHNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A25831CF6FA1100478EAB /* UIViewController+XHNavBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CAE8A351DB7416C0091D289 /* CusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CusViewController.h; sourceTree = "<group>"; };
+		0CAE8A361DB7416C0091D289 /* CusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CusViewController.m; sourceTree = "<group>"; };
+		0CAE8A371DB7416C0091D289 /* CusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CusViewController.xib; sourceTree = "<group>"; };
+		0CAE8A3A1DB741720091D289 /* SysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysViewController.h; sourceTree = "<group>"; };
+		0CAE8A3B1DB741720091D289 /* SysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SysViewController.m; sourceTree = "<group>"; };
+		0CAE8A3C1DB741720091D289 /* SysViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SysViewController.xib; sourceTree = "<group>"; };
+		0CAE8A411DB741C90091D289 /* CusSubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CusSubViewController.h; sourceTree = "<group>"; };
+		0CAE8A421DB741C90091D289 /* CusSubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CusSubViewController.m; sourceTree = "<group>"; };
+		0CAE8A431DB741C90091D289 /* CusSubViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CusSubViewController.xib; sourceTree = "<group>"; };
+		0CAE8A461DB741D90091D289 /* SysSubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysSubViewController.h; sourceTree = "<group>"; };
+		0CAE8A471DB741D90091D289 /* SysSubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SysSubViewController.m; sourceTree = "<group>"; };
+		0CAE8A481DB741D90091D289 /* SysSubViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SysSubViewController.xib; sourceTree = "<group>"; };
 		4B6A25601CF6F9F500478EAB /* XHNavBarExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XHNavBarExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6A25641CF6F9F600478EAB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4B6A25661CF6F9F600478EAB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -28,12 +44,6 @@
 		4B6A25691CF6F9F600478EAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B6A256C1CF6F9F600478EAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B6A256E1CF6F9F600478EAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B6A25751CF6FA1100478EAB /* CusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CusViewController.h; sourceTree = "<group>"; };
-		4B6A25761CF6FA1100478EAB /* CusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CusViewController.m; sourceTree = "<group>"; };
-		4B6A25771CF6FA1100478EAB /* CusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CusViewController.xib; sourceTree = "<group>"; };
-		4B6A25781CF6FA1100478EAB /* SysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysViewController.h; sourceTree = "<group>"; };
-		4B6A25791CF6FA1100478EAB /* SysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SysViewController.m; sourceTree = "<group>"; };
-		4B6A257A1CF6FA1100478EAB /* SysViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SysViewController.xib; sourceTree = "<group>"; };
 		4B6A25801CF6FA1100478EAB /* xh_navbar_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xh_navbar_back@2x.png"; sourceTree = "<group>"; };
 		4B6A25811CF6FA1100478EAB /* xh_navbar_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xh_navbar_back@3x.png"; sourceTree = "<group>"; };
 		4B6A25821CF6FA1100478EAB /* UIViewController+XHNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XHNavBar.h"; sourceTree = "<group>"; };
@@ -51,6 +61,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CAE8A331DB741440091D289 /* CusViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0CAE8A3F1DB7418A0091D289 /* SubViewController */,
+				0CAE8A351DB7416C0091D289 /* CusViewController.h */,
+				0CAE8A361DB7416C0091D289 /* CusViewController.m */,
+				0CAE8A371DB7416C0091D289 /* CusViewController.xib */,
+			);
+			path = CusViewController;
+			sourceTree = "<group>";
+		};
+		0CAE8A341DB741440091D289 /* SysViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0CAE8A401DB7419C0091D289 /* SubViewController */,
+				0CAE8A3A1DB741720091D289 /* SysViewController.h */,
+				0CAE8A3B1DB741720091D289 /* SysViewController.m */,
+				0CAE8A3C1DB741720091D289 /* SysViewController.xib */,
+			);
+			path = SysViewController;
+			sourceTree = "<group>";
+		};
+		0CAE8A3F1DB7418A0091D289 /* SubViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0CAE8A411DB741C90091D289 /* CusSubViewController.h */,
+				0CAE8A421DB741C90091D289 /* CusSubViewController.m */,
+				0CAE8A431DB741C90091D289 /* CusSubViewController.xib */,
+			);
+			path = SubViewController;
+			sourceTree = "<group>";
+		};
+		0CAE8A401DB7419C0091D289 /* SubViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0CAE8A461DB741D90091D289 /* SysSubViewController.h */,
+				0CAE8A471DB741D90091D289 /* SysSubViewController.m */,
+				0CAE8A481DB741D90091D289 /* SysSubViewController.xib */,
+			);
+			path = SubViewController;
+			sourceTree = "<group>";
+		};
 		4B6A25571CF6F9F500478EAB = {
 			isa = PBXGroup;
 			children = (
@@ -93,12 +145,8 @@
 		4B6A25741CF6FA1100478EAB /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				4B6A25751CF6FA1100478EAB /* CusViewController.h */,
-				4B6A25761CF6FA1100478EAB /* CusViewController.m */,
-				4B6A25771CF6FA1100478EAB /* CusViewController.xib */,
-				4B6A25781CF6FA1100478EAB /* SysViewController.h */,
-				4B6A25791CF6FA1100478EAB /* SysViewController.m */,
-				4B6A257A1CF6FA1100478EAB /* SysViewController.xib */,
+				0CAE8A331DB741440091D289 /* CusViewController */,
+				0CAE8A341DB741440091D289 /* SysViewController */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -179,10 +227,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B6A25871CF6FA1100478EAB /* SysViewController.xib in Resources */,
 				4B6A256A1CF6F9F600478EAB /* Assets.xcassets in Resources */,
+				0CAE8A4A1DB741D90091D289 /* SysSubViewController.xib in Resources */,
+				0CAE8A451DB741C90091D289 /* CusSubViewController.xib in Resources */,
 				4B6A258A1CF6FA1100478EAB /* xh_navbar_back@2x.png in Resources */,
-				4B6A25851CF6FA1100478EAB /* CusViewController.xib in Resources */,
+				0CAE8A3E1DB741720091D289 /* SysViewController.xib in Resources */,
+				0CAE8A391DB7416C0091D289 /* CusViewController.xib in Resources */,
 				4B6A258B1CF6FA1100478EAB /* xh_navbar_back@3x.png in Resources */,
 				4B6A256D1CF6F9F600478EAB /* LaunchScreen.storyboard in Resources */,
 			);
@@ -195,9 +245,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B6A25861CF6FA1100478EAB /* SysViewController.m in Sources */,
+				0CAE8A381DB7416C0091D289 /* CusViewController.m in Sources */,
+				0CAE8A441DB741C90091D289 /* CusSubViewController.m in Sources */,
+				0CAE8A491DB741D90091D289 /* SysSubViewController.m in Sources */,
 				4B6A25681CF6F9F600478EAB /* AppDelegate.m in Sources */,
-				4B6A25841CF6FA1100478EAB /* CusViewController.m in Sources */,
+				0CAE8A3D1DB741720091D289 /* SysViewController.m in Sources */,
 				4B6A25651CF6F9F600478EAB /* main.m in Sources */,
 				4B6A258C1CF6FA1100478EAB /* UIViewController+XHNavBar.m in Sources */,
 			);
@@ -303,6 +355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = XHNavBarExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qiantou.XHNavBarExample;
@@ -314,6 +367,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = XHNavBarExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qiantou.XHNavBarExample;
@@ -340,6 +394,7 @@
 				4B6A25731CF6F9F600478EAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

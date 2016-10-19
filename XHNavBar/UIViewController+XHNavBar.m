@@ -24,9 +24,11 @@
 #import "UIViewController+XHNavBar.h"
 
 #define NavBar_OtherColor  [UIColor colorWithRed:(arc4random()%255)/255.0f green:(arc4random()%255)/255.0f blue:(arc4random()%255)/255.0f alpha:1]
+#define NavBar_RGBAColor(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
 
 #define NavBar_BackgroundColor  [UIColor orangeColor] //背景色
 #define NavBar_TextColor        [UIColor whiteColor]  //字体颜色
+#define NavBar_LineColor        NavBar_RGBAColor(220,220,220,1) //底部线颜色
 #define NavBar_BackImageName    @"xh_navbar_back"  //返回 imageName
 #define NavBar_TitleFont        18  //title字体大小
 
@@ -133,16 +135,18 @@ typedef NS_ENUM(NSInteger,NavBarItemType) {
     return nil;
 }
 #pragma mark-自定义navigationBar
-
 -(UILabel *)cus_initNavBarAndSetTitle:(NSString *)title
 {
-    [self cus_initNavBarBackAction:@selector(backAction)];
+    [self cus_initNavBar];
     return [self cus_setNavBarTitle:title];
 }
--(UILabel *)cus_initNavBarAndSetTitle:(NSString *)title backAction:(SEL)selecter
+-(void)cus_setNavBarBack
 {
-    [self cus_initNavBarBackAction:selecter];
-    return [self cus_setNavBarTitle:title];
+    [self cus_setNavBarBackAndAction:@selector(backAction)];
+}
+-(void )cus_setNavBarBackAndAction:(SEL)selecter
+{
+    [self cus_setNavBarLeftButtonWithImageName:NavBar_BackImageName action:selecter];
 }
 -(UIButton *)cus_setNavBarRightButtonWithTitle:(NSString *)name action:(SEL)selecter
 {
@@ -155,7 +159,7 @@ typedef NS_ENUM(NSInteger,NavBarItemType) {
 }
 
 #pragma mark-private
--(void)cus_initNavBarBackAction:(SEL)selecter
+-(void)cus_initNavBar
 {
     //影藏系统自带NavBar
     self.navigationController.navigationBar.hidden = YES;
@@ -164,10 +168,14 @@ typedef NS_ENUM(NSInteger,NavBarItemType) {
     //背景
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,[UIScreen mainScreen].bounds.size.width, 64)];
     bgView.backgroundColor = NavBar_BackgroundColor;//设置默认颜色
-    [self.view addSubview:bgView];
-    //返回
-    [self cus_setNavBarLeftButtonBackAndAction:selecter];
     
+    
+    UILabel *lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 64-0.5, [UIScreen mainScreen].bounds.size.width, 0.5)];
+    lineLabel.backgroundColor = NavBar_LineColor;
+    [bgView addSubview:lineLabel];
+    
+    [self.view addSubview:bgView];
+
 }
 -(UILabel  *)cus_setNavBarTitle:(NSString *)title
 {
@@ -176,13 +184,7 @@ typedef NS_ENUM(NSInteger,NavBarItemType) {
     
     return navBarTitleLab;
 }
--(void)cus_setNavBarLeftButtonBackAndAction:(SEL)selecter
-{
-    if(self.navigationController.viewControllers.count>1)
-    {
-        [self cus_setNavBarLeftButtonWithImageName:NavBar_BackImageName action:selecter];
-    }
-}
+
 -(UIButton *)cus_setNavBarLeftButtonWithImageName:(NSString *)name action:(SEL)selecter
 {
     return [self cus_setNavBarButtonWithName:name action:selecter type:NavBarItemTypeLeftImage];

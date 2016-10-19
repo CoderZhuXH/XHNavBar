@@ -8,7 +8,7 @@
 
 #import "SysViewController.h"
 #import "UIViewController+XHNavBar.h"
-
+#import "SysSubViewController.h"
 @interface SysViewController ()
 
 @end
@@ -23,11 +23,11 @@
      */
     
     //1.初始化navigationBar + 设置标题
-    [self sys_initNavBarAndSetTitle:@"首页"];
+    [self sys_initNavBarAndSetTitle:@"SysViewController"];
     
     //2.设置rightBarButtonItem
     //-文字类型
-    [self sys_setNavBarRightButtonWithTitle:@"保存" action:@selector(saveAction)];
+    [self sys_setNavBarRightButtonWithTitle:@"save" action:@selector(saveAction)];
     //-图片类型
     //[selector sys_setNavBarRightButtonWithImageName:@"xh_navbar_back" action:@selector(saveAction)];
     
@@ -36,11 +36,11 @@
 }
 -(void)saveAction
 {
-    NSLog(@"保存");
+    NSLog(@"save");
 }
 - (IBAction)pushAction:(UIButton *)sender {
  
-    SysViewController *VC = [[SysViewController alloc] init];
+    SysSubViewController *VC = [[SysSubViewController alloc] init];
     [self.navigationController pushViewController:VC animated:YES];
 }
 

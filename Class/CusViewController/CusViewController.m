@@ -8,6 +8,7 @@
 
 #import "CusViewController.h"
 #import "UIViewController+XHNavBar.h"
+#import "CusSubViewController.h"
 
 @interface CusViewController ()
 
@@ -24,30 +25,24 @@
      */
     
     //1.初始化navigationBar + 设置标题
-    [self cus_initNavBarAndSetTitle:@"首页"];
-    //1.初始化navigationBar + 设置标题 + 自定义返回事件(两方法二选一)
-    //[self cus_initNavBarAndSetTitle:@"首页" backAction:@selector(backAction)];
+    [self cus_initNavBarAndSetTitle:@"CusViewController"];
     
     //2.设置rightBarButtonItem
     //-文字类型
-    [self cus_setNavBarRightButtonWithTitle:@"保存" action:@selector(saveAction)];
+    [self cus_setNavBarRightButtonWithTitle:@"save" action:@selector(saveAction)];
     //-图片类型
     //[selector cus_setNavBarRightButtonWithImageName:@"xh_navbar_back" action:@selector(saveAction)];
     
-    
-    
-    // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)pushAction:(UIButton *)sender {
 
-    
-    CusViewController *VC = [[CusViewController alloc] init];
+    CusSubViewController *VC = [[CusSubViewController alloc] init];
     [self.navigationController pushViewController:VC animated:YES];
 
 }
 -(void)otherAction{
     
-    NSLog(@"其他");
+    NSLog(@"other");
 }
 -(void)backAction
 {
@@ -55,7 +50,7 @@
 }
 -(void)saveAction
 {
-    NSLog(@"保存");
+    NSLog(@"save");
 }
 
 - (void)didReceiveMemoryWarning {
