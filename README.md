@@ -7,10 +7,14 @@
 ```objc
     //1.初始化navigationBar + 设置标题
     [self cus_initNavBarAndSetTitle:@"首页"];
-    //1.初始化navigationBar + 设置标题 + 自定义返回事件 (两方法二选一)
-    [self cus_initNavBarAndSetTitle:@"首页" backAction:@selector(backAction)];
+
+    //2.设置返回
+    [self cus_setNavBarBack];
     
-    //2.设置rightBarButtonItem
+    //2.1设置返回并自定义返回事件
+    [self cus_setNavBarBackAndAction:@selector(backAction)];
+    
+    //3.设置rightBarButtonItem
     //-文字类型
     [self cus_setNavBarRightButtonWithTitle:@"保存" action:@selector(saveAction)];
     //-图片类型
@@ -30,7 +34,7 @@
 ### 2.文字颜色,字体大小等请在XHNavBar.m 上面宏定义中修改
 ### 3.相关API
 ```objc
-#pragma mark-使用系统 navigationBar
+#pragma mark-使用系统navigationBar
 
 /**
  *   系统navbar-初始化+设置标题(此方法,包含初始化和设置标题 2步操作)
@@ -71,14 +75,14 @@
 -(UILabel  *)cus_initNavBarAndSetTitle:(NSString *)title;
 
 /**
- *  自定义navbar-初始化+设置标题+自定义返回事件
- *
- *  @param title    标题
- *  @param selecter 返回事件
- *
- *  @return 标题Label
+ *  自定义navbar-设置返回按钮
  */
--(UILabel *)cus_initNavBarAndSetTitle:(NSString *)title backAction:(SEL)selecter;
+-(void)cus_setNavBarBack;
+
+/**
+ *  自定义navbar-设置返回按钮+自定义事件
+ */
+-(void)cus_setNavBarBackAndAction:(SEL)selecter;
 
 /**
  *  自定义navbar-设置rightButton(文字类型)
@@ -98,6 +102,7 @@
  *  @return Button
  */
 -(UIButton *)cus_setNavBarRightButtonWithImageName:(NSString *)name action:(SEL)selecter;
+
 
 ```
 
