@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "XHNavBar"
-  s.version      = "1.1"
+  s.version      = "1.2.0"
   s.summary      = "快速创建navigationBar,支持系统navigationBar及自定义navigationBar"
   s.homepage     = "https://github.com/CoderZhuXH/XHNavBar"
   s.license      = { :type => "MIT", :file => "LICENSE" }
