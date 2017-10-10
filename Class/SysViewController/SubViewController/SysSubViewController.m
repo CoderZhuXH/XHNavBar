@@ -28,6 +28,7 @@
     //2.设置rightBarButtonItem
     //-文字类型
     [self sys_setNavBarRightButtonWithTitle:@"save" action:@selector(saveAction)];
+    
     //-图片类型
     //[selector sys_setNavBarRightButtonWithImageName:@"xh_navbar_back" action:@selector(saveAction)];
     

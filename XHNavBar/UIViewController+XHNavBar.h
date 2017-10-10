@@ -23,7 +23,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (XHNavBar)
+@interface UIViewController (XHNavBar)<UIGestureRecognizerDelegate>
 
 #pragma mark-使用系统navigationBar
 

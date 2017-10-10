@@ -32,6 +32,9 @@
 #define NavBar_BackImageName    @"xh_navbar_back"  //返回 imageName
 #define NavBar_TitleFont        18  //title字体大小
 
+#define NavBar_StatusBar_Height   [UIApplication sharedApplication].statusBarFrame.size.height
+#define NavBar_Height  (NavBar_StatusBar_Height + 44.0)  //状态栏高度+导航栏
+#define NavBar_IPhoneX_Top_SafeH  24.0//iphonex 顶部安全距离
 #define NavBarButtonLeft_Width  60  //item left button宽度
 #define NavBarButtonRight_Width 60  //item right button 宽度
 #define NavBarButton_Height     44  //item button 高度
@@ -61,6 +64,7 @@ typedef NS_ENUM(NSInteger,NavBarItemType) {
 
     self.navigationItem.title=title;
 }
+
 -(UIButton *)sys_setNavBarRightButtonWithTitle:(NSString *)name action:(SEL)selecter
 {
     return [self sys_setNavBarButtonWithName:name action:selecter type:NavBarItemTypeRightTitle];
@@ -70,10 +74,15 @@ typedef NS_ENUM(NSInteger,NavBarItemType) {
     return [self sys_setNavBarButtonWithName:name action:selecter type:NavBarItemTypeRightImage];
 }
 #pragma mark-private
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    return self.navigationController.childViewControllers.count > 1;
+}
 -(void)sys_initNavBar
 {
     self.navigationController.navigationBar.translucent = translucent;
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
     
     //背景
     [self.navigationController.navigationBar setBackgroundImage:[self imageFromColor:NavBar_BackgroundColor] forBarMetrics:UIBarMetricsDefault];
@@ -82,13 +91,10 @@ typedef NS_ENUM(NSInteger,NavBarItemType) {
     if(self.navigationController.viewControllers.count>1)
     {
         //返回按钮
-        UIImage *backButtonImage = [[UIImage imageNamed:NavBar_BackImageName] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 30, 0, 0)];
-        
-        [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-        //将返回按钮的文字position设置不在屏幕上显示
-        [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin) forBarMetrics:UIBarMetricsDefault];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:NavBar_BackImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
     }
 }
+
 -(void)sys_setNavBarTitle:(NSString *)title
 {
     self.navigationItem.title = title;
@@ -166,11 +172,11 @@ typedef NS_ENUM(NSInteger,NavBarItemType) {
     self.navigationController.navigationBar.translucent = translucent;
     self.automaticallyAdjustsScrollViewInsets = NO;
     //背景
-    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,[UIScreen mainScreen].bounds.size.width, 64)];
+    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,[UIScreen mainScreen].bounds.size.width, NavBar_Height)];
     bgView.backgroundColor = NavBar_BackgroundColor;//设置默认颜色
     
     
-    UILabel *lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 64-0.5, [UIScreen mainScreen].bounds.size.width, 0.5)];
+    UILabel *lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, NavBar_Height-0.5, [UIScreen mainScreen].bounds.size.width, 0.5)];
     lineLabel.backgroundColor = NavBar_LineColor;
     [bgView addSubview:lineLabel];
     
@@ -193,7 +199,7 @@ typedef NS_ENUM(NSInteger,NavBarItemType) {
 {
     if(type==NavBarItemTypeLeftImage)
     {
-        UIButton *button = [self createNavBarButtonWithFrame:CGRectMake(NavbarItem_Space, 20, NavBarButtonLeft_Width, NavBarButton_Height) action:selecter];
+        UIButton *button = [self createNavBarButtonWithFrame:CGRectMake(NavbarItem_Space, NavBar_StatusBar_Height, NavBarButtonLeft_Width, NavBarButton_Height) action:selecter];
         button.imageEdgeInsets = UIEdgeInsetsMake(0, -NavBarButtonLeft_Width/2.0+NavBarButton_ImgSpace, 0, 0);
         [button setImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
         [self.view addSubview:button];
@@ -201,7 +207,7 @@ typedef NS_ENUM(NSInteger,NavBarItemType) {
     }
     else if (type==NavBarItemTypeRightTitle)
     {
-        UIButton *button = [self createNavBarButtonWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width-NavBarButtonRight_Width-NavbarItem_Space, 20, NavBarButtonRight_Width, NavBarButton_Height) action:selecter];
+        UIButton *button = [self createNavBarButtonWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width-NavBarButtonRight_Width-NavbarItem_Space, NavBar_StatusBar_Height, NavBarButtonRight_Width, NavBarButton_Height) action:selecter];
         button.titleLabel.font = [UIFont systemFontOfSize:NavBarButton_TitleFont];
         [button setTitleColor:NavBar_TextColor forState:UIControlStateNormal];
         [button setTitle:name forState:UIControlStateNormal];
@@ -210,7 +216,7 @@ typedef NS_ENUM(NSInteger,NavBarItemType) {
     }
     else if (type==NavBarItemTypeRightImage)
     {
-        UIButton *button = [self createNavBarButtonWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width-NavBarButtonRight_Width-NavbarItem_Space, 20, NavBarButtonRight_Width, NavBarButton_Height) action:selecter];
+        UIButton *button = [self createNavBarButtonWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width-NavBarButtonRight_Width-NavbarItem_Space, NavBar_StatusBar_Height, NavBarButtonRight_Width, NavBarButton_Height) action:selecter];
         button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -NavBarButtonRight_Width/2.0+NavBarButton_ImgSpace);
         [button setImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
         [self.view addSubview:button];
@@ -222,7 +228,7 @@ typedef NS_ENUM(NSInteger,NavBarItemType) {
 {
     CGFloat x = NavBarButtonRight_Width>NavBarButtonLeft_Width?NavBarButtonRight_Width:NavBarButtonLeft_Width;
     x = x+NavbarItem_Space;//间隙
-    UILabel *navBarTitleLab = [[UILabel alloc] initWithFrame:CGRectMake(x,20,[UIScreen mainScreen].bounds.size.width- x*2, NavBarButton_Height)];
+    UILabel *navBarTitleLab = [[UILabel alloc] initWithFrame:CGRectMake(x,NavBar_StatusBar_Height,[UIScreen mainScreen].bounds.size.width- x*2, NavBarButton_Height)];
     navBarTitleLab.text = titleName;
     navBarTitleLab.textAlignment =NSTextAlignmentCenter;
     navBarTitleLab.textColor = NavBar_TextColor;
@@ -259,4 +265,5 @@ typedef NS_ENUM(NSInteger,NavBarItemType) {
     UIGraphicsEndImageContext();
     return image;
 }
+
 @end
